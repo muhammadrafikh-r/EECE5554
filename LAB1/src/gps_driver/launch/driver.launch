@@ -1,0 +1,4 @@
+<launch>
+	<arg name = "port"/>
+	<node name ="my_gnss_puck_driver" pkg ="gps_driver" type ="gps-driver" args="$(arg port)"></node>
+</launch>

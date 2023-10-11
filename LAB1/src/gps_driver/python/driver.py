@@ -11,113 +11,113 @@ import rospy
 #Conversion of latitude and longitude from DDMM.SSS to DD format 
 def conversion(latitude, longitude):
 
-    float_longitude = str(longitude)
-    float_latitude = str(latitude)
+    str_longitude = str(longitude)
+    str_latitude = str(latitude)
     
-    #To check if the string consists of a decimal
-    if '.' in float_longitude or '.' in float_latitude :
+    if '.' in str_longitude or '.' in str_latitude :
 
-        #Split the string into integer and decimal parts
-        long_integer_part, long_decimal_part = float_longitude.split('.')
-        lat_integer_part, lat_decimal_part = float_latitude.split('.')
-        
-        #Extraction of first two digits and remaining digits
-        lat_first_two_digits = lat_integer_part[:2]
-        lat_remaining_digits = lat_integer_part[2:] + '.' + lat_decimal_part
-        long_first_three_digits = long_integer_part[:3]
-        long_remaining_digits = long_integer_part[3:] + '.' + long_decimal_part
+        lat_int, lat_deci = str_latitude.split('.')
+        long_int, long_deci = str_longitude.split('.')
+ 
+        long_first_three_digits = long_int[:3]
+        long_remaining_digits = long_int[3:] + '.' + long_deci
 
-        #Conversion of remaining digits to a float followed by division by 60
-        long_remaining_float = float(long_remaining_digits) / 60
-        lat_remaining_float = float(lat_remaining_digits) / 60
+        lat_first_two_digits = lat_int[:2]
+        lat_remaining_digits = lat_int[2:] + '.' + lat_deci
 
-        #Summing up the divided value to the first two digits
-        lat_result = float(lat_first_two_digits) + lat_remaining_float
-        long_result = float(long_first_three_digits) + long_remaining_float
+        latitude_res = float(lat_first_two_digits) + float(lat_remaining_digits) / 60
+        longitude_res = float(long_first_three_digits) + float(long_remaining_digits) / 60
 
-    return lat_result, long_result
+    return latitude_res, longitude_res
 
-def parse_gpgga(line):
+def parse(line):
 
-    # Splitting the $GPGGA line into fields
-    fields = line.split(',')
+    # Splitting the $GPGGA line into split_data
+    split_data = line.split(',')
 
-    # Check if the line has enough fields and starts with $GPGGA
-    if fields[0] == "b'$GPGGA":
+    # Check if the line has enough split_data and starts with $GPGGA
+    if split_data[0] == "b'$GPGGA":
 
         try:
-            time_stamp = float(fields[1])
+            ts = split_data[1]
+            ts = float(ts)
 
-            if fields[3] == 'N':
-                latitude = float(fields[2])
+            if split_data[5] == 'E':
+                longitude = float(split_data[4])
             else:
-                latitude = -float(fields[2])  
+                longitude = -float(split_data[4]) 
 
-            if fields[5] == 'E':
-                longitude = float(fields[4])
+            if split_data[3] == 'N':
+                latitude = float(split_data[2])
             else:
-                longitude = -float(fields[4]) 
+                latitude = -float(split_data[2])  
 
-            utc = float(fields[1])  
-            hdop = float(fields[8])   
-            altitude = float(fields[9])
+            utc = float(split_data[1])  
+            hdop = float(split_data[8])   
+            altitude = float(split_data[9])
             
             latitude, longitude = conversion(latitude, longitude)
 
-            #Conversion of latitude and longitude to UTM
-            utm_coords = utm.from_latlon(latitude, longitude)
-            utm_easting = utm_coords[0]   
-            utm_northing = utm_coords[1]
-            zone = utm_coords[2]
-            letter = utm_coords[3]
+            utm_coordinates = utm.from_latlon(latitude, longitude)
+            utm_easting = utm_coordinates[0]   
+            utm_northing = utm_coordinates[1]
+            zone = utm_coordinates[2]
+            letter = utm_coordinates[3]
         
-            return time_stamp, latitude, longitude, altitude, utm_easting, utm_northing, zone, letter, utc, hdop
+            return ts, latitude, longitude, altitude, utm_easting, utm_northing, zone, letter, utc, hdop
         
         except ValueError as e:
 
-            print(f"Error parsing GPGGA data: {e}")
+            print(f"Error: parsing: {e}")
             return None
 
-def my_gnss_puck_driver():
-
-    rospy.init_node('my_gnss_puck_driver')
-
-    my_serial_port = rospy.get_param('~port', '/dev/ttyUSB0')
-
-    serial_baud = rospy.get_param('~baudrate', 4800)
-    port = serial.Serial(my_serial_port, serial_baud, timeout=3.)
-    rospy.logdebug("GNSS puck is on port " + my_serial_port + " at " + str(serial_baud))
-    gps_pub = rospy.Publisher('/gps', gps_msg, queue_size=10)
+def puckDriver():
     
-    gps_data = gps_msg()
-    gps_data.Header.frame_id = "GPS1_Frame"
+    rospy.init_node('puckDriver')
 
+    gps_publisher = rospy.Publisher('/gps', gps_msg, queue_size=10)
+    
+    if len(sys.argv) > 0:
+        rospy.loginfo(sys.argv[0])
+        serial_port = rospy.get_param('~port', sys.argv[1])
+    else:
+        serial_port = rospy.get_param('~port', '/dev/ttyUSB0')
+
+    serial_reception = rospy.get_param('~baudrate', 4800)
+    port = serial.Serial(rospy.get_param('~port', '/dev/ttyUSB0'), serial_reception, timeout=3.)
+    rospy.logdebug("GNSS Port Number" + rospy.get_param('~port', '/dev/ttyUSB0') + " at " + str(serial_reception))
+  
+    
+    raw_gps_data = gps_msg()
+    raw_gps_data.Header.frame_id = "GPS1_Frame"
     try:
         while not rospy.is_shutdown():
 
-            line = port.readline().strip()
-            line = str(line)
+            line = str(port.readline().strip())
+
 
             if line.startswith("b'$GPGGA"):
 
-                parsed_data = parse_gpgga(line)
+                parsedD = parse(line)
 
-                if parsed_data:
+                if parsedD:
 
-                    time_utc = str(parsed_data[0])
-                    time_ros = float(time_utc[:2])*3600+float(time_utc[2:4])*60+float(time_utc[4:])
-                    gps_data.Header.stamp = rospy.Time.from_sec(time_ros)
-                    gps_data.Latitude = float(parsed_data[1])
-                    gps_data.Longitude = float(parsed_data[2])
-                    gps_data.Altitude = float(parsed_data[3])
-                    gps_data.UTM_easting = float(parsed_data[4])
-                    gps_data.UTM_northing = float(parsed_data[5])
-                    gps_data.Zone = int(parsed_data[6])
-                    gps_data.Letter = str(parsed_data[7])
-                    gps_data.UTC = float(parsed_data[8])
-                    gps_data.HDOP = float(parsed_data[9])
-                    gps_pub.publish(gps_data)
-                    print(gps_data)
+                    raw_gps_data.Latitude = float(parsedD[1])
+                    raw_gps_data.Longitude = float(parsedD[2])
+                    raw_gps_data.Altitude = float(parsedD[3])
+                    raw_gps_data.UTM_easting = float(parsedD[4])
+                    raw_gps_data.UTM_northing = float(parsedD[5])
+                    raw_gps_data.Zone = int(parsedD[6])
+                    raw_gps_data.Letter = str(parsedD[7])
+                    raw_gps_data.UTC = float(parsedD[8])
+                    raw_gps_data.HDOP = float(parsedD[9])
+
+                    utc_time = str(parsedD[0])
+                    ros_time = float(utc_time[2:4])*60+float(utc_time[4:])+ float(utc_time[:2])*3600
+                    raw_gps_data.Header.stamp = rospy.Time.from_sec(ros_time)
+                    gps_publisher.publish(raw_gps_data)
+                    
+                    print(raw_gps_data)
 
     except rospy.ROSInterruptException:
         port.close()
@@ -128,7 +128,7 @@ def my_gnss_puck_driver():
 if __name__ == '__main__':
 
     try:
-        my_gnss_puck_driver()
+        puckDriver()
 
     except rospy.ROSInterruptException:
         pass

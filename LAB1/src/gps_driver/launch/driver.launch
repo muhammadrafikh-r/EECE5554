@@ -1,4 +1,4 @@
 <launch>
 	<arg name = "port"/>
-	<node name ="my_gnss_puck_driver" pkg ="gps_driver" type ="gps-driver" args="$(arg port)"></node>
+	<node name ="puckDriver" pkg ="gps_driver" type ="driver.py" output="screen" args="$(arg port)"></node>
 </launch>

@@ -84,8 +84,8 @@ def puckDriver():
         serial_port = rospy.get_param('~port', '/dev/ttyUSB0')
 
     serial_reception = rospy.get_param('~baudrate', 4800)
-    port = serial.Serial(rospy.get_param('~port', '/dev/ttyUSB0'), serial_reception, timeout=3.)
-    rospy.logdebug("GNSS Port Number" + rospy.get_param('~port', '/dev/ttyUSB0') + " at " + str(serial_reception))
+    port = serial.Serial(serial_port, serial_reception, timeout=3.)
+    rospy.logdebug("GNSS Port Number" + serial_port + " at " + str(serial_reception))
   
     
     raw_gps_data = gps_msg()
@@ -113,7 +113,8 @@ def puckDriver():
                     raw_gps_data.HDOP = float(parsedD[9])
 
                     utc_time = str(parsedD[0])
-                    ros_time = float(utc_time[2:4])*60+float(utc_time[4:])+ float(utc_time[:2])*3600
+                    #ros_time = float(utc_time[2:4])*60+float(utc_time[4:])+ float(utc_time[:2])*3600
+                    ros_time = float(utc_time[:2])*3600+float(utc_time[2:4])*60+float(utc_time[4:])
                     raw_gps_data.Header.stamp = rospy.Time.from_sec(ros_time)
                     gps_publisher.publish(raw_gps_data)
                     

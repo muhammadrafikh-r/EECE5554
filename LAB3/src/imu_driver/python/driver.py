@@ -36,7 +36,14 @@ if __name__ == '__main__':
     convert_to_quaternion_server() 
     # rospy.wait_for_service('convert_to_quaternion')
     # eulertoquat = rospy.ServiceProxy('convert_to_quaternion', EulerToQuaternion)
-    port_param = rospy.get_param('imu_driver/port', '/dev/ttyUSB0')
+
+    if len(sys.argv) > 0:
+        rospy.loginfo(sys.argv[0])
+        port_param = rospy.get_param('imu_driver/port', sys.argv[1])
+    else:
+        port_param = rospy.get_param('imu_driver/port', '/dev/ttyUSB0')
+
+    # port_param = rospy.get_param('imu_driver/port', '/dev/ttyUSB0')
     port = serial.Serial(port_param, 115200, timeout=3.)
     port.write(b"VNWRG,07,40*XX")
     

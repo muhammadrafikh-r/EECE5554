@@ -3,6 +3,7 @@
 
 import rospy
 import serial
+import sys
 from imu_driver.msg import imu_msg
 from imu_driver.srv import EulerToQuaternion, EulerToQuaternionRequest, EulerToQuaternionResponse
 import numpy as np

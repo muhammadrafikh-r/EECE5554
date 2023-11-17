@@ -19,12 +19,12 @@ add_custom_target(imu_driver_generate_messages ALL)
 
 get_filename_component(_filename "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg/imu_msg.msg" NAME_WE)
 add_custom_target(_imu_driver_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "imu_driver" "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg/imu_msg.msg" "geometry_msgs/Vector3:sensor_msgs/MagneticField:std_msgs/Header:geometry_msgs/Quaternion:sensor_msgs/Imu"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "imu_driver" "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg/imu_msg.msg" "sensor_msgs/MagneticField:geometry_msgs/Quaternion:std_msgs/Header:geometry_msgs/Vector3:sensor_msgs/Imu"
 )
 
 get_filename_component(_filename "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/srv/EulerToQuaternion.srv" NAME_WE)
 add_custom_target(_imu_driver_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "imu_driver" "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/srv/EulerToQuaternion.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "imu_driver" "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/srv/EulerToQuaternion.srv" "geometry_msgs/Quaternion:geometry_msgs/Vector3"
 )
 
 #
@@ -36,7 +36,7 @@ add_custom_target(_imu_driver_generate_messages_check_deps_${_filename}
 _generate_msg_cpp(imu_driver
   "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg/imu_msg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/MagneticField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Imu.msg"
+  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/MagneticField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Imu.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/imu_driver
 )
 
@@ -44,7 +44,7 @@ _generate_msg_cpp(imu_driver
 _generate_srv_cpp(imu_driver
   "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/srv/EulerToQuaternion.srv"
   "${MSG_I_FLAGS}"
-  ""
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/imu_driver
 )
 
@@ -77,7 +77,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS imu_driver_generate_messages_cpp)
 _generate_msg_eus(imu_driver
   "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg/imu_msg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/MagneticField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Imu.msg"
+  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/MagneticField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Imu.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/imu_driver
 )
 
@@ -85,7 +85,7 @@ _generate_msg_eus(imu_driver
 _generate_srv_eus(imu_driver
   "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/srv/EulerToQuaternion.srv"
   "${MSG_I_FLAGS}"
-  ""
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/imu_driver
 )
 
@@ -118,7 +118,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS imu_driver_generate_messages_eus)
 _generate_msg_lisp(imu_driver
   "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg/imu_msg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/MagneticField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Imu.msg"
+  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/MagneticField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Imu.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/imu_driver
 )
 
@@ -126,7 +126,7 @@ _generate_msg_lisp(imu_driver
 _generate_srv_lisp(imu_driver
   "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/srv/EulerToQuaternion.srv"
   "${MSG_I_FLAGS}"
-  ""
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/imu_driver
 )
 
@@ -159,7 +159,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS imu_driver_generate_messages_lisp)
 _generate_msg_nodejs(imu_driver
   "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg/imu_msg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/MagneticField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Imu.msg"
+  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/MagneticField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Imu.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/imu_driver
 )
 
@@ -167,7 +167,7 @@ _generate_msg_nodejs(imu_driver
 _generate_srv_nodejs(imu_driver
   "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/srv/EulerToQuaternion.srv"
   "${MSG_I_FLAGS}"
-  ""
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/imu_driver
 )
 
@@ -200,7 +200,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS imu_driver_generate_messages_nodejs
 _generate_msg_py(imu_driver
   "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg/imu_msg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/MagneticField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Imu.msg"
+  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/MagneticField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Imu.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/imu_driver
 )
 
@@ -208,7 +208,7 @@ _generate_msg_py(imu_driver
 _generate_srv_py(imu_driver
   "/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/srv/EulerToQuaternion.srv"
   "${MSG_I_FLAGS}"
-  ""
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/imu_driver
 )
 

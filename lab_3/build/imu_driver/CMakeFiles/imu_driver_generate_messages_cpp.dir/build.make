@@ -59,10 +59,10 @@ imu_driver/CMakeFiles/imu_driver_generate_messages_cpp: /home/rayyan/catkin_ws/E
 
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/imu_msg.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/imu_msg.h: /home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg/imu_msg.msg
-/home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/imu_msg.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/imu_msg.h: /opt/ros/noetic/share/sensor_msgs/msg/MagneticField.msg
-/home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/imu_msg.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/imu_msg.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/imu_msg.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/imu_msg.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/imu_msg.h: /opt/ros/noetic/share/sensor_msgs/msg/Imu.msg
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/imu_msg.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rayyan/catkin_ws/EECE5554/lab_3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from imu_driver/imu_msg.msg"
@@ -70,6 +70,8 @@ imu_driver/CMakeFiles/imu_driver_generate_messages_cpp: /home/rayyan/catkin_ws/E
 
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/EulerToQuaternion.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/EulerToQuaternion.h: /home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/srv/EulerToQuaternion.srv
+/home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/EulerToQuaternion.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/EulerToQuaternion.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/EulerToQuaternion.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/EulerToQuaternion.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rayyan/catkin_ws/EECE5554/lab_3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from imu_driver/EulerToQuaternion.srv"

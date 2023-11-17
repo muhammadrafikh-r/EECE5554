@@ -61,16 +61,18 @@ imu_driver/CMakeFiles/imu_driver_generate_messages_py: /home/rayyan/catkin_ws/EE
 
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/msg/_imu_msg.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/msg/_imu_msg.py: /home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg/imu_msg.msg
-/home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/msg/_imu_msg.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/msg/_imu_msg.py: /opt/ros/noetic/share/sensor_msgs/msg/MagneticField.msg
-/home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/msg/_imu_msg.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/msg/_imu_msg.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/msg/_imu_msg.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/msg/_imu_msg.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/msg/_imu_msg.py: /opt/ros/noetic/share/sensor_msgs/msg/Imu.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rayyan/catkin_ws/EECE5554/lab_3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG imu_driver/imu_msg"
 	cd /home/rayyan/catkin_ws/EECE5554/lab_3/build/imu_driver && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg/imu_msg.msg -Iimu_driver:/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p imu_driver -o /home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/msg
 
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/srv/_EulerToQuaternion.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/srv/_EulerToQuaternion.py: /home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/srv/EulerToQuaternion.srv
+/home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/srv/_EulerToQuaternion.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/srv/_EulerToQuaternion.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rayyan/catkin_ws/EECE5554/lab_3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV imu_driver/EulerToQuaternion"
 	cd /home/rayyan/catkin_ws/EECE5554/lab_3/build/imu_driver && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/srv/EulerToQuaternion.srv -Iimu_driver:/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p imu_driver -o /home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/srv
 

@@ -1,8 +1,9 @@
 <launch>
+
     <arg name="port" default="/dev/ttyUSB0" />
+    <param name="port" type="str" value="$(arg port)" />
     
-    <node name="imu_driver" pkg="imu_driver" type="driver.py" output="screen">
-        <param name="port" type="str" value="$(arg port)" />
-    </node>
+    <node name="imu_driver" pkg="imu_driver" type="driver.py" output="screen"/>
+    <node name="quaternion_conversion_server" pkg="imu_driver" type="convert_to_quaternion_server.py" output="screen"/>
 
 </launch>

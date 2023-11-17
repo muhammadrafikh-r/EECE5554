@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/rayyan/catkin_ws/EECE5554/lab_3/build
 include imu_driver/CMakeFiles/_imu_driver_generate_messages_check_deps_imu_msg.dir/progress.make
 
 imu_driver/CMakeFiles/_imu_driver_generate_messages_check_deps_imu_msg:
-	cd /home/rayyan/catkin_ws/EECE5554/lab_3/build/imu_driver && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py imu_driver /home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg/imu_msg.msg geometry_msgs/Vector3:sensor_msgs/MagneticField:std_msgs/Header:geometry_msgs/Quaternion:sensor_msgs/Imu
+	cd /home/rayyan/catkin_ws/EECE5554/lab_3/build/imu_driver && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py imu_driver /home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg/imu_msg.msg sensor_msgs/MagneticField:geometry_msgs/Quaternion:std_msgs/Header:geometry_msgs/Vector3:sensor_msgs/Imu
 
 _imu_driver_generate_messages_check_deps_imu_msg: imu_driver/CMakeFiles/_imu_driver_generate_messages_check_deps_imu_msg
 _imu_driver_generate_messages_check_deps_imu_msg: imu_driver/CMakeFiles/_imu_driver_generate_messages_check_deps_imu_msg.dir/build.make

@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/rayyan/catkin_ws/EECE5554/lab_3/devel:$CMAKE_PREFIX_PATH"
 export PWD='/home/rayyan/catkin_ws/EECE5554/lab_3/build'
-export ROSLISP_PACKAGE_DIRECTORIES="/home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/rayyan/catkin_ws/EECE5554/lab_3/src:$ROS_PACKAGE_PATH"

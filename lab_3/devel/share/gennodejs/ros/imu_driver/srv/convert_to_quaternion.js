@@ -18,7 +18,7 @@ let geometry_msgs = _finder('geometry_msgs');
 
 //-----------------------------------------------------------
 
-class EulerToQuaternionRequest {
+class convert_to_quaternionRequest {
   constructor(initObj={}) {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
@@ -35,16 +35,16 @@ class EulerToQuaternionRequest {
   }
 
   static serialize(obj, buffer, bufferOffset) {
-    // Serializes a message object of type EulerToQuaternionRequest
+    // Serializes a message object of type convert_to_quaternionRequest
     // Serialize message field [euler_angles]
     bufferOffset = geometry_msgs.msg.Vector3.serialize(obj.euler_angles, buffer, bufferOffset);
     return bufferOffset;
   }
 
   static deserialize(buffer, bufferOffset=[0]) {
-    //deserializes a message object of type EulerToQuaternionRequest
+    //deserializes a message object of type convert_to_quaternionRequest
     let len;
-    let data = new EulerToQuaternionRequest(null);
+    let data = new convert_to_quaternionRequest(null);
     // Deserialize message field [euler_angles]
     data.euler_angles = geometry_msgs.msg.Vector3.deserialize(buffer, bufferOffset);
     return data;
@@ -56,7 +56,7 @@ class EulerToQuaternionRequest {
 
   static datatype() {
     // Returns string type for a service object
-    return 'imu_driver/EulerToQuaternionRequest';
+    return 'imu_driver/convert_to_quaternionRequest';
   }
 
   static md5sum() {
@@ -90,7 +90,7 @@ class EulerToQuaternionRequest {
     if (typeof msg !== 'object' || msg === null) {
       msg = {};
     }
-    const resolved = new EulerToQuaternionRequest(null);
+    const resolved = new convert_to_quaternionRequest(null);
     if (msg.euler_angles !== undefined) {
       resolved.euler_angles = geometry_msgs.msg.Vector3.Resolve(msg.euler_angles)
     }
@@ -102,7 +102,7 @@ class EulerToQuaternionRequest {
     }
 };
 
-class EulerToQuaternionResponse {
+class convert_to_quaternionResponse {
   constructor(initObj={}) {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
@@ -119,16 +119,16 @@ class EulerToQuaternionResponse {
   }
 
   static serialize(obj, buffer, bufferOffset) {
-    // Serializes a message object of type EulerToQuaternionResponse
+    // Serializes a message object of type convert_to_quaternionResponse
     // Serialize message field [quaternion]
     bufferOffset = geometry_msgs.msg.Quaternion.serialize(obj.quaternion, buffer, bufferOffset);
     return bufferOffset;
   }
 
   static deserialize(buffer, bufferOffset=[0]) {
-    //deserializes a message object of type EulerToQuaternionResponse
+    //deserializes a message object of type convert_to_quaternionResponse
     let len;
-    let data = new EulerToQuaternionResponse(null);
+    let data = new convert_to_quaternionResponse(null);
     // Deserialize message field [quaternion]
     data.quaternion = geometry_msgs.msg.Quaternion.deserialize(buffer, bufferOffset);
     return data;
@@ -140,7 +140,7 @@ class EulerToQuaternionResponse {
 
   static datatype() {
     // Returns string type for a service object
-    return 'imu_driver/EulerToQuaternionResponse';
+    return 'imu_driver/convert_to_quaternionResponse';
   }
 
   static md5sum() {
@@ -172,7 +172,7 @@ class EulerToQuaternionResponse {
     if (typeof msg !== 'object' || msg === null) {
       msg = {};
     }
-    const resolved = new EulerToQuaternionResponse(null);
+    const resolved = new convert_to_quaternionResponse(null);
     if (msg.quaternion !== undefined) {
       resolved.quaternion = geometry_msgs.msg.Quaternion.Resolve(msg.quaternion)
     }
@@ -185,8 +185,8 @@ class EulerToQuaternionResponse {
 };
 
 module.exports = {
-  Request: EulerToQuaternionRequest,
-  Response: EulerToQuaternionResponse,
+  Request: convert_to_quaternionRequest,
+  Response: convert_to_quaternionResponse,
   md5sum() { return '48653d5a466e82f3531a42dc323eefb0'; },
-  datatype() { return 'imu_driver/EulerToQuaternion'; }
+  datatype() { return 'imu_driver/convert_to_quaternion'; }
 };

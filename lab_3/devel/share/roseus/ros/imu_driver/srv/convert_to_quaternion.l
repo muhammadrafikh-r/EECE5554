@@ -1,16 +1,16 @@
 ;; Auto-generated. Do not edit!
 
 
-(when (boundp 'imu_driver::EulerToQuaternion)
+(when (boundp 'imu_driver::convert_to_quaternion)
   (if (not (find-package "IMU_DRIVER"))
     (make-package "IMU_DRIVER"))
-  (shadow 'EulerToQuaternion (find-package "IMU_DRIVER")))
-(unless (find-package "IMU_DRIVER::EULERTOQUATERNION")
-  (make-package "IMU_DRIVER::EULERTOQUATERNION"))
-(unless (find-package "IMU_DRIVER::EULERTOQUATERNIONREQUEST")
-  (make-package "IMU_DRIVER::EULERTOQUATERNIONREQUEST"))
-(unless (find-package "IMU_DRIVER::EULERTOQUATERNIONRESPONSE")
-  (make-package "IMU_DRIVER::EULERTOQUATERNIONRESPONSE"))
+  (shadow 'convert_to_quaternion (find-package "IMU_DRIVER")))
+(unless (find-package "IMU_DRIVER::CONVERT_TO_QUATERNION")
+  (make-package "IMU_DRIVER::CONVERT_TO_QUATERNION"))
+(unless (find-package "IMU_DRIVER::CONVERT_TO_QUATERNIONREQUEST")
+  (make-package "IMU_DRIVER::CONVERT_TO_QUATERNIONREQUEST"))
+(unless (find-package "IMU_DRIVER::CONVERT_TO_QUATERNIONRESPONSE")
+  (make-package "IMU_DRIVER::CONVERT_TO_QUATERNIONRESPONSE"))
 
 (in-package "ROS")
 
@@ -22,11 +22,11 @@
   (ros::roseus-add-msgs "geometry_msgs"))
 
 
-(defclass imu_driver::EulerToQuaternionRequest
+(defclass imu_driver::convert_to_quaternionRequest
   :super ros::object
   :slots (_euler_angles ))
 
-(defmethod imu_driver::EulerToQuaternionRequest
+(defmethod imu_driver::convert_to_quaternionRequest
   (:init
    (&key
     ((:euler_angles __euler_angles) (instance geometry_msgs::Vector3 :init))
@@ -63,11 +63,11 @@
    self)
   )
 
-(defclass imu_driver::EulerToQuaternionResponse
+(defclass imu_driver::convert_to_quaternionResponse
   :super ros::object
   :slots (_quaternion ))
 
-(defmethod imu_driver::EulerToQuaternionResponse
+(defmethod imu_driver::convert_to_quaternionResponse
   (:init
    (&key
     ((:quaternion __quaternion) (instance geometry_msgs::Quaternion :init))
@@ -104,21 +104,21 @@
    self)
   )
 
-(defclass imu_driver::EulerToQuaternion
+(defclass imu_driver::convert_to_quaternion
   :super ros::object
   :slots ())
 
-(setf (get imu_driver::EulerToQuaternion :md5sum-) "48653d5a466e82f3531a42dc323eefb0")
-(setf (get imu_driver::EulerToQuaternion :datatype-) "imu_driver/EulerToQuaternion")
-(setf (get imu_driver::EulerToQuaternion :request) imu_driver::EulerToQuaternionRequest)
-(setf (get imu_driver::EulerToQuaternion :response) imu_driver::EulerToQuaternionResponse)
+(setf (get imu_driver::convert_to_quaternion :md5sum-) "48653d5a466e82f3531a42dc323eefb0")
+(setf (get imu_driver::convert_to_quaternion :datatype-) "imu_driver/convert_to_quaternion")
+(setf (get imu_driver::convert_to_quaternion :request) imu_driver::convert_to_quaternionRequest)
+(setf (get imu_driver::convert_to_quaternion :response) imu_driver::convert_to_quaternionResponse)
 
-(defmethod imu_driver::EulerToQuaternionRequest
-  (:response () (instance imu_driver::EulerToQuaternionResponse :init)))
+(defmethod imu_driver::convert_to_quaternionRequest
+  (:response () (instance imu_driver::convert_to_quaternionResponse :init)))
 
-(setf (get imu_driver::EulerToQuaternionRequest :md5sum-) "48653d5a466e82f3531a42dc323eefb0")
-(setf (get imu_driver::EulerToQuaternionRequest :datatype-) "imu_driver/EulerToQuaternionRequest")
-(setf (get imu_driver::EulerToQuaternionRequest :definition-)
+(setf (get imu_driver::convert_to_quaternionRequest :md5sum-) "48653d5a466e82f3531a42dc323eefb0")
+(setf (get imu_driver::convert_to_quaternionRequest :datatype-) "imu_driver/convert_to_quaternionRequest")
+(setf (get imu_driver::convert_to_quaternionRequest :definition-)
       "geometry_msgs/Vector3 euler_angles
 
 
@@ -148,9 +148,9 @@ float64 z
 float64 w
 ")
 
-(setf (get imu_driver::EulerToQuaternionResponse :md5sum-) "48653d5a466e82f3531a42dc323eefb0")
-(setf (get imu_driver::EulerToQuaternionResponse :datatype-) "imu_driver/EulerToQuaternionResponse")
-(setf (get imu_driver::EulerToQuaternionResponse :definition-)
+(setf (get imu_driver::convert_to_quaternionResponse :md5sum-) "48653d5a466e82f3531a42dc323eefb0")
+(setf (get imu_driver::convert_to_quaternionResponse :datatype-) "imu_driver/convert_to_quaternionResponse")
+(setf (get imu_driver::convert_to_quaternionResponse :definition-)
       "geometry_msgs/Vector3 euler_angles
 
 
@@ -182,6 +182,6 @@ float64 w
 
 
 
-(provide :imu_driver/EulerToQuaternion "48653d5a466e82f3531a42dc323eefb0")
+(provide :imu_driver/convert_to_quaternion "48653d5a466e82f3531a42dc323eefb0")
 
 

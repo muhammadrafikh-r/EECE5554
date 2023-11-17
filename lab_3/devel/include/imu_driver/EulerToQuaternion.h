@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::imu_driver::EulerToQuaternion > {
   static const char* value()
   {
-    return "b218cfe499191b24c074175e474522de";
+    return "48653d5a466e82f3531a42dc323eefb0";
   }
 
   static const char* value(const ::imu_driver::EulerToQuaternion&) { return value(); }

@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/rayyan/catkin_ws/EECE5554/lab_3/build
 include imu_driver/CMakeFiles/_imu_driver_generate_messages_check_deps_EulerToQuaternion.dir/progress.make
 
 imu_driver/CMakeFiles/_imu_driver_generate_messages_check_deps_EulerToQuaternion:
-	cd /home/rayyan/catkin_ws/EECE5554/lab_3/build/imu_driver && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py imu_driver /home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/srv/EulerToQuaternion.srv 
+	cd /home/rayyan/catkin_ws/EECE5554/lab_3/build/imu_driver && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py imu_driver /home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/srv/EulerToQuaternion.srv geometry_msgs/Quaternion:geometry_msgs/Vector3
 
 _imu_driver_generate_messages_check_deps_EulerToQuaternion: imu_driver/CMakeFiles/_imu_driver_generate_messages_check_deps_EulerToQuaternion
 _imu_driver_generate_messages_check_deps_EulerToQuaternion: imu_driver/CMakeFiles/_imu_driver_generate_messages_check_deps_EulerToQuaternion.dir/build.make

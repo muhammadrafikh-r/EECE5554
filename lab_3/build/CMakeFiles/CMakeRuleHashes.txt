@@ -1,20 +1,25 @@
 # Hashes of file build rules.
 7ab7e2154c547f74039b84eb75b1d495 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/EulerToQuaternion.h
+fb0ab40d6cddbff1ffb1a2efee8b6271 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/convert_to_quaternion.h
 a5aba8cd71dd6f6dc8ac1e76a98d40f6 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/include/imu_driver/imu_msg.h
 693887777f36317bdb0aab2b80b16239 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/msg/__init__.py
 c873c6bb1513bbc657342ca75cf8c756 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/msg/_imu_msg.py
 70c5db8df0490a16699367b45d97e1db /home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/srv/_EulerToQuaternion.py
 56778951524d6ba729a0d6fab93d61e7 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/srv/__init__.py
+cfd8ffe537b1bcf0de3f14326a737542 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/lib/python3/dist-packages/imu_driver/srv/_convert_to_quaternion.py
 bd376515618c7bfd1ac6d81b2d2001da /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/common-lisp/ros/imu_driver/msg/imu_msg.lisp
 b27d069a364818e92c7db696d3937c6a /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/common-lisp/ros/imu_driver/srv/EulerToQuaternion.lisp
+902d8d067259eadd7097b623f1a752b2 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/common-lisp/ros/imu_driver/srv/convert_to_quaternion.lisp
 982f0f58b220414926e611421d24de54 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/msg/imu_msg.js
 6fdcdeb8f865d5de5a866040d9bf9e30 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/srv/EulerToQuaternion.js
+21c014f4396917dbea63caf9b244ac52 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/srv/convert_to_quaternion.js
 897386fa096909b3991d8c0bdbc74280 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/roseus/ros/imu_driver/manifest.l
 3497803cc12ad223e779d04d61994453 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/roseus/ros/imu_driver/msg/imu_msg.l
 12cb81f740591bbc8c410bf0bb176996 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/roseus/ros/imu_driver/srv/EulerToQuaternion.l
+24883a41f072af31faf59de2b845d0f6 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/roseus/ros/imu_driver/srv/convert_to_quaternion.l
 6819a199a0d8c0a4fa9f4c8686f5fbc2 CMakeFiles/clean_test_results
-587be4643e288e95837db321053290e4 imu_driver/CMakeFiles/_imu_driver_generate_messages_check_deps_EulerToQuaternion
-aa76ed2b378ad189d33407b56961a673 imu_driver/CMakeFiles/_imu_driver_generate_messages_check_deps_imu_msg
+a33bb0c8d202def411b4610518a8c863 imu_driver/CMakeFiles/_imu_driver_generate_messages_check_deps_EulerToQuaternion
+9dfe328ece1fd4e76faf5d9971561b16 imu_driver/CMakeFiles/_imu_driver_generate_messages_check_deps_imu_msg
 f975177f55a67e25a9ef8d6fc9215a58 imu_driver/CMakeFiles/imu_driver_generate_messages_cpp
 f975177f55a67e25a9ef8d6fc9215a58 imu_driver/CMakeFiles/imu_driver_generate_messages_eus
 f975177f55a67e25a9ef8d6fc9215a58 imu_driver/CMakeFiles/imu_driver_generate_messages_lisp

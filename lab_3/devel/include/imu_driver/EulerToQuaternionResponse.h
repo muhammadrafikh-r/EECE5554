@@ -15,6 +15,7 @@
 #include <ros/builtin_message_traits.h>
 #include <ros/message_operations.h>
 
+#include <geometry_msgs/Quaternion.h>
 
 namespace imu_driver
 {
@@ -24,32 +25,17 @@ struct EulerToQuaternionResponse_
   typedef EulerToQuaternionResponse_<ContainerAllocator> Type;
 
   EulerToQuaternionResponse_()
-    : x(0.0)
-    , y(0.0)
-    , z(0.0)
-    , w(0.0)  {
+    : quaternion()  {
     }
   EulerToQuaternionResponse_(const ContainerAllocator& _alloc)
-    : x(0.0)
-    , y(0.0)
-    , z(0.0)
-    , w(0.0)  {
+    : quaternion(_alloc)  {
   (void)_alloc;
     }
 
 
 
-   typedef double _x_type;
-  _x_type x;
-
-   typedef double _y_type;
-  _y_type y;
-
-   typedef double _z_type;
-  _z_type z;
-
-   typedef double _w_type;
-  _w_type w;
+   typedef  ::geometry_msgs::Quaternion_<ContainerAllocator>  _quaternion_type;
+  _quaternion_type quaternion;
 
 
 
@@ -80,10 +66,7 @@ return s;
 template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::imu_driver::EulerToQuaternionResponse_<ContainerAllocator1> & lhs, const ::imu_driver::EulerToQuaternionResponse_<ContainerAllocator2> & rhs)
 {
-  return lhs.x == rhs.x &&
-    lhs.y == rhs.y &&
-    lhs.z == rhs.z &&
-    lhs.w == rhs.w;
+  return lhs.quaternion == rhs.quaternion;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -140,12 +123,12 @@ struct MD5Sum< ::imu_driver::EulerToQuaternionResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "a779879fadf0160734f906b8c19c7004";
+    return "c3d2506862045c1ddfbe5c9ef23688f4";
   }
 
   static const char* value(const ::imu_driver::EulerToQuaternionResponse_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xa779879fadf01607ULL;
-  static const uint64_t static_value2 = 0x34f906b8c19c7004ULL;
+  static const uint64_t static_value1 = 0xc3d2506862045c1dULL;
+  static const uint64_t static_value2 = 0xdfbe5c9ef23688f4ULL;
 };
 
 template<class ContainerAllocator>
@@ -164,11 +147,18 @@ struct Definition< ::imu_driver::EulerToQuaternionResponse_<ContainerAllocator> 
 {
   static const char* value()
   {
-    return "float64 x\n"
+    return "\n"
+"geometry_msgs/Quaternion quaternion\n"
+"\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Quaternion\n"
+"# This represents an orientation in free space in quaternion form.\n"
+"\n"
+"float64 x\n"
 "float64 y\n"
 "float64 z\n"
 "float64 w\n"
-"\n"
 ;
   }
 
@@ -187,10 +177,7 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.x);
-      stream.next(m.y);
-      stream.next(m.z);
-      stream.next(m.w);
+      stream.next(m.quaternion);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -209,14 +196,9 @@ struct Printer< ::imu_driver::EulerToQuaternionResponse_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::imu_driver::EulerToQuaternionResponse_<ContainerAllocator>& v)
   {
-    s << indent << "x: ";
-    Printer<double>::stream(s, indent + "  ", v.x);
-    s << indent << "y: ";
-    Printer<double>::stream(s, indent + "  ", v.y);
-    s << indent << "z: ";
-    Printer<double>::stream(s, indent + "  ", v.z);
-    s << indent << "w: ";
-    Printer<double>::stream(s, indent + "  ", v.w);
+    s << indent << "quaternion: ";
+    s << std::endl;
+    Printer< ::geometry_msgs::Quaternion_<ContainerAllocator> >::stream(s, indent + "  ", v.quaternion);
   }
 };
 

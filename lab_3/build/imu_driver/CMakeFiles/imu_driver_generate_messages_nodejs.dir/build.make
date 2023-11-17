@@ -59,16 +59,18 @@ imu_driver/CMakeFiles/imu_driver_generate_messages_nodejs: /home/rayyan/catkin_w
 
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/msg/imu_msg.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/msg/imu_msg.js: /home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg/imu_msg.msg
-/home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/msg/imu_msg.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/msg/imu_msg.js: /opt/ros/noetic/share/sensor_msgs/msg/MagneticField.msg
-/home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/msg/imu_msg.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/msg/imu_msg.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/msg/imu_msg.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/msg/imu_msg.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/msg/imu_msg.js: /opt/ros/noetic/share/sensor_msgs/msg/Imu.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rayyan/catkin_ws/EECE5554/lab_3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from imu_driver/imu_msg.msg"
 	cd /home/rayyan/catkin_ws/EECE5554/lab_3/build/imu_driver && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg/imu_msg.msg -Iimu_driver:/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p imu_driver -o /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/msg
 
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/srv/EulerToQuaternion.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/srv/EulerToQuaternion.js: /home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/srv/EulerToQuaternion.srv
+/home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/srv/EulerToQuaternion.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/srv/EulerToQuaternion.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rayyan/catkin_ws/EECE5554/lab_3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from imu_driver/EulerToQuaternion.srv"
 	cd /home/rayyan/catkin_ws/EECE5554/lab_3/build/imu_driver && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/srv/EulerToQuaternion.srv -Iimu_driver:/home/rayyan/catkin_ws/EECE5554/lab_3/src/imu_driver/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p imu_driver -o /home/rayyan/catkin_ws/EECE5554/lab_3/devel/share/gennodejs/ros/imu_driver/srv
 

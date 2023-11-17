@@ -15,6 +15,7 @@
 #include <ros/builtin_message_traits.h>
 #include <ros/message_operations.h>
 
+#include <geometry_msgs/Vector3.h>
 
 namespace imu_driver
 {
@@ -24,27 +25,17 @@ struct EulerToQuaternionRequest_
   typedef EulerToQuaternionRequest_<ContainerAllocator> Type;
 
   EulerToQuaternionRequest_()
-    : roll(0.0)
-    , pitch(0.0)
-    , yaw(0.0)  {
+    : euler_angles()  {
     }
   EulerToQuaternionRequest_(const ContainerAllocator& _alloc)
-    : roll(0.0)
-    , pitch(0.0)
-    , yaw(0.0)  {
+    : euler_angles(_alloc)  {
   (void)_alloc;
     }
 
 
 
-   typedef double _roll_type;
-  _roll_type roll;
-
-   typedef double _pitch_type;
-  _pitch_type pitch;
-
-   typedef double _yaw_type;
-  _yaw_type yaw;
+   typedef  ::geometry_msgs::Vector3_<ContainerAllocator>  _euler_angles_type;
+  _euler_angles_type euler_angles;
 
 
 
@@ -75,9 +66,7 @@ return s;
 template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::imu_driver::EulerToQuaternionRequest_<ContainerAllocator1> & lhs, const ::imu_driver::EulerToQuaternionRequest_<ContainerAllocator2> & rhs)
 {
-  return lhs.roll == rhs.roll &&
-    lhs.pitch == rhs.pitch &&
-    lhs.yaw == rhs.yaw;
+  return lhs.euler_angles == rhs.euler_angles;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -134,12 +123,12 @@ struct MD5Sum< ::imu_driver::EulerToQuaternionRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "eeec8b25a660789a89540dedcb2b06d6";
+    return "01954336000a228e12c0ea86ec76073a";
   }
 
   static const char* value(const ::imu_driver::EulerToQuaternionRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xeeec8b25a660789aULL;
-  static const uint64_t static_value2 = 0x89540dedcb2b06d6ULL;
+  static const uint64_t static_value1 = 0x01954336000a228eULL;
+  static const uint64_t static_value2 = 0x12c0ea86ec76073aULL;
 };
 
 template<class ContainerAllocator>
@@ -158,9 +147,21 @@ struct Definition< ::imu_driver::EulerToQuaternionRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "float64 roll\n"
-"float64 pitch\n"
-"float64 yaw\n"
+    return "geometry_msgs/Vector3 euler_angles\n"
+"\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Vector3\n"
+"# This represents a vector in free space. \n"
+"# It is only meant to represent a direction. Therefore, it does not\n"
+"# make sense to apply a translation to it (e.g., when applying a \n"
+"# generic rigid transformation to a Vector3, tf2 will only apply the\n"
+"# rotation). If you want your data to be translatable too, use the\n"
+"# geometry_msgs/Point message instead.\n"
+"\n"
+"float64 x\n"
+"float64 y\n"
+"float64 z\n"
 ;
   }
 
@@ -179,9 +180,7 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.roll);
-      stream.next(m.pitch);
-      stream.next(m.yaw);
+      stream.next(m.euler_angles);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -200,12 +199,9 @@ struct Printer< ::imu_driver::EulerToQuaternionRequest_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::imu_driver::EulerToQuaternionRequest_<ContainerAllocator>& v)
   {
-    s << indent << "roll: ";
-    Printer<double>::stream(s, indent + "  ", v.roll);
-    s << indent << "pitch: ";
-    Printer<double>::stream(s, indent + "  ", v.pitch);
-    s << indent << "yaw: ";
-    Printer<double>::stream(s, indent + "  ", v.yaw);
+    s << indent << "euler_angles: ";
+    s << std::endl;
+    Printer< ::geometry_msgs::Vector3_<ContainerAllocator> >::stream(s, indent + "  ", v.euler_angles);
   }
 };
 

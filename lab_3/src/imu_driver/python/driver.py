@@ -44,8 +44,12 @@ if __name__ == '__main__':
     else:
         port_param = rospy.get_param('imu_driver/port', '/dev/ttyUSB0')
 
-    # port_param = rospy.get_param('imu_driver/port', '/dev/ttyUSB0')
-    port = serial.Serial(port_param, 115200, timeout=3.)
+    try:
+        port = serial.Serial(port_param, 115200, timeout=3.)
+    except:
+        print('No Signal')
+        sys.exit(0)
+
     port.write(b"VNWRG,07,40*XX")
     
     imu_parsed = imu_msg()

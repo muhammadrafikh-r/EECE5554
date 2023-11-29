@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/rayyan/catkin_ws/EECE5554/LAB4/devel -DCMAKE_INSTALL_PREFIX=/home/rayyan/catkin_ws/EECE5554/LAB4/install -G Unix Makefiles

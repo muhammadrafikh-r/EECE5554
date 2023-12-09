@@ -1,4 +1,4 @@
-buildingDir = fullfile('Public Art\Large Overlap');
+buildingDir = fullfile('Image Sets\Public Art\Large Overlap');
 buildingScene = imageDatastore(buildingDir);
 
 % Display images to be stitched.

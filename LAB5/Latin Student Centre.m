@@ -1,4 +1,4 @@
-buildingDir = fullfile(['Latin Student Centre']);
+buildingDir = fullfile(['Image Sets\Latin Student Centre']);
 buildingScene = imageDatastore(buildingDir);
 
 % Display images to be stitched.
